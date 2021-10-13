@@ -17,7 +17,7 @@ A tool to activity logger to monitor the users of your Laravel Nova.
 You can install the package in to a Laravel app that uses [Nova](https://nova.laravel.com) via composer:
 
 ```bash
-composer require bolechen/nova-activitylog
+composer require workup/nova-activitylog
 ```
 
 You can publish the migration with:
@@ -59,7 +59,7 @@ public function tools()
 {
     return [
         // ...
-        new \Bolechen\NovaActivitylog\NovaActivitylog(),
+        new \Workup\NovaActivitylog\NovaActivitylog(),
     ];
 }
 ```
@@ -90,7 +90,7 @@ For more advanced usage can look at the doc: https://docs.spatie.be/laravel-acti
 If you want to customize the tools. Eg: add filters or cards, you can create your owner resource file extends the original like this:
 
 ```php
-use Bolechen\NovaActivitylog\Resources\Activitylog;
+use Workup\NovaActivitylog\Resources\Activitylog;
 
 class Activity extends Activitylog
 {
