@@ -1,5 +1,5 @@
 {
-    "name": "bolechen/nova-activitylog",
+    "name": "workup/nova-activitylog",
     "description": "A tool to activity logger to monitor the users of your Laravel Nova.",
     "keywords": [
         "laravel",
@@ -20,7 +20,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Bolechen\\NovaActivitylog\\ToolServiceProvider"
+                "Workup\\NovaActivitylog\\ToolServiceProvider"
             ]
         }
     },

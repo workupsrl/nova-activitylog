@@ -13,5 +13,5 @@ return [
     /*
      * Set the resource used for `nova-activitylog` package.
      */
-    'resource' => \Bolechen\NovaActivitylog\Resources\Activitylog::class,
+    'resource' => \Workup\NovaActivitylog\Resources\Activitylog::class,
 ];

@@ -9,7 +9,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Bolechen\NovaActivitylog;
+namespace Workup\NovaActivitylog;
 
 use Laravel\Nova\Tool;
 

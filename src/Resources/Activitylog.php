@@ -9,14 +9,14 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Bolechen\NovaActivitylog\Resources;
+namespace Workup\NovaActivitylog\Resources;
 
+use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Code;
-use Laravel\Nova\Fields\DateTime;
-use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\MorphTo;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\MorphTo;
+use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Resource as NovaResource;
 
 class Activitylog extends NovaResource

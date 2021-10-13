@@ -9,10 +9,10 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Bolechen\NovaActivitylog\Http\Middleware;
+namespace Workup\NovaActivitylog\Http\Middleware;
 
-use Bolechen\NovaActivitylog\NovaActivitylog;
 use Laravel\Nova\Nova;
+use Workup\NovaActivitylog\NovaActivitylog;
 
 class Authorize
 {

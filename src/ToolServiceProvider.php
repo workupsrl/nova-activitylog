@@ -9,11 +9,11 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Bolechen\NovaActivitylog;
+namespace Workup\NovaActivitylog;
 
-use Illuminate\Support\ServiceProvider;
-use Laravel\Nova\Events\ServingNova;
 use Laravel\Nova\Nova;
+use Laravel\Nova\Events\ServingNova;
+use Illuminate\Support\ServiceProvider;
 use Spatie\Activitylog\Models\Activity;
 
 class ToolServiceProvider extends ServiceProvider
