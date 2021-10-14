@@ -14,7 +14,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Bolechen\\NovaActivitylog\\": "src/"
+            "Workup\\NovaActivitylog\\": "src/"
         }
     },
     "extra": {
