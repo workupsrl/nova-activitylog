@@ -1,13 +1,12 @@
 <?php
 
-namespace Workup\Nova\Activitylog;
+namespace Workup\Nova\ActivityLog;
 
-use Bolechen\NovaActivitylog\Resources\Activitylog;
+use Laravel\Nova\Tool;
 use Illuminate\Http\Request;
 use Laravel\Nova\Menu\MenuSection;
-use Laravel\Nova\Tool;
 
-class Activitylog extends Tool
+class ActivityLog extends Tool
 {
     /**
      * Perform any tasks that need to happen when the tool is booted.
@@ -19,13 +18,13 @@ class Activitylog extends Tool
     /**
      * Build the menu that renders the navigation links for the tool.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\Request  $request
      *
      * @return mixed
      */
     public function menu(Request $request)
     {
-        return MenuSection::resource(Activitylog::class)
+        return MenuSection::resource(\Workup\Nova\ActivityLog\Resources\ActivityLog::class)
             ->icon('document-duplicate');
     }
 }

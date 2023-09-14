@@ -1,20 +1,11 @@
 <?php
 
-/*
- * This file is part of the bolechen/nova-activitylog
- *
- * (c) Bole Chen <avenger@php.net>
- *
- * This source file is subject to the MIT license that is bundled
- * with this source code in the file LICENSE.
- */
-
-namespace Workup\NovaActivitylog;
+namespace Workup\Nova\ActivityLog;
 
 use Laravel\Nova\Nova;
 use Laravel\Nova\Events\ServingNova;
 use Illuminate\Support\ServiceProvider;
-use Spatie\Activitylog\Models\Activity;
+use Spatie\ActivityLog\Models\Activity;
 
 class ToolServiceProvider extends ServiceProvider
 {
@@ -24,12 +15,12 @@ class ToolServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__.'/../config/nova-activitylog.php' => config_path('nova-activitylog.php'),
+            __DIR__ . '/../config/nova-activitylog.php' => config_path('nova-activitylog.php'),
         ], 'config');
 
-        $this->mergeConfigFrom(__DIR__.'/../config/nova-activitylog.php', 'nova-activitylog');
+        $this->mergeConfigFrom(__DIR__ . '/../config/nova-activitylog.php', 'nova-activitylog');
 
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'nova-activitylog');
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'nova-activitylog');
 
         $this->app->booted(function () {
             // 记录操作者 IP

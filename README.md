@@ -24,7 +24,7 @@ composer require workup/nova-activitylog
 You can publish the migration with:
 
 ```bash
-php artisan vendor:publish --provider="Spatie\Activitylog\ActivitylogServiceProvider" --tag="activitylog-migrations"
+php artisan vendor:publish --provider="Spatie\ActivityLog\ActivityLogServiceProvider" --tag="activitylog-migrations"
 ```
 
 *Note*: The default migration assumes you are using integers for your model IDs. If you are using UUIDs, or some other format, adjust the format of the subject_id and causer_id fields in the published migration before continuing.
@@ -39,7 +39,7 @@ php artisan migrate
 You can optionally publish the config file with:
 
 ```bash
-php artisan vendor:publish --provider="Spatie\Activitylog\ActivitylogServiceProvider" --tag="config"
+php artisan vendor:publish --provider="Spatie\ActivityLog\ActivityLogServiceProvider" --tag="config"
 ```
 
 You may only want to log actions from nova, put this line to your `.env` files let default logger off.
@@ -61,18 +61,18 @@ public function tools()
 {
     return [
         // ...
-        new \Workup\NovaActivitylog\NovaActivitylog(),
+        new \Workup\Nova\ActivityLog\ActivityLog(),
     ];
 }
 ```
 
-Because the backend uses the `spatie/laravel-activitylog` package, you need to let your model use the `Spatie\Activitylog\Traits\LogsActivity` trait.
+Because the backend uses the `spatie/laravel-activitylog` package, you need to let your model use the `Spatie\ActivityLog\Traits\LogsActivity` trait.
 
 Here's an example:
 
 ```php
 use Illuminate\Database\Eloquent\Model;
-use Spatie\Activitylog\Traits\LogsActivity;
+use Spatie\ActivityLog\Traits\LogsActivity;
 
 class NewsItem extends Model
 {
@@ -96,9 +96,9 @@ Typical usage of tool authorizing using `->canSee()` or `->canSeeWhen()` when re
 If you want to customize the tools. Eg: add filters or cards, you can create your owner resource file extends the original like this:
 
 ```php
-use Workup\NovaActivitylog\Resources\Activitylog;
+use Workup\Nova\ActivityLog\Resources\ActivityLog;
 
-class Activity extends Activitylog
+class Activity extends ActivityLog
 {
     public function filters(Request $request)
     {
@@ -113,7 +113,7 @@ class Activity extends Activitylog
 Next up, publish the config file with:
 
 ```bash
-php artisan vendor:publish --provider="Bolechen\\NovaActivitylog\\ToolServiceProvider" --tag="config"
+php artisan vendor:publish --provider="Workup\\Nova\\ActivityLog\\ToolServiceProvider" --tag="config"
 ```
 
 And change the `resource` in `config/nova-activitylog.php` to your custom nova resource.
