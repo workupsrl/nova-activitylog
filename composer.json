@@ -1,32 +1,38 @@
 {
-    "name": "workup/nova-activitylog",
-    "description": "A tool to activity logger to monitor the users of your Laravel Nova.",
-    "keywords": [
-        "laravel",
-        "nova",
-        "activity",
-        "log"
-    ],
-    "license": "MIT",
-    "require": {
-        "workup/nova": "^2.0|^3.0",
-        "spatie/laravel-activitylog": "^4.0"
-    },
-    "autoload": {
-        "psr-4": {
-            "Workup\\NovaActivitylog\\": "src/"
-        }
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "Workup\\NovaActivitylog\\ToolServiceProvider"
-            ]
-        }
-    },
-    "config": {
-        "sort-packages": true
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+  "name": "workup/nova-activitylog",
+  "description": "A tool to activity logger to monitor the users of your Laravel Nova.",
+  "keywords": [
+    "laravel",
+    "nova",
+    "activity",
+    "log"
+  ],
+  "license": "MIT",
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://nova.laravel.com"
+    }
+  ],
+  "require": {
+    "laravel/nova": "^4.0",
+    "spatie/laravel-activitylog": "^4.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Workup\\Nova\\ActivityLog\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Workup\\Nova\\ActivityLog\\ToolServiceProvider"
+      ]
+    }
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
 }

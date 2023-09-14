@@ -1,9 +1,10 @@
 # Nova tool for activity log
 
 [![StyleCI](https://github.styleci.io/repos/174304298/shield?branch=master)](https://github.styleci.io/repos/174304298)
-![Packagist Downloads](https://img.shields.io/packagist/dt/bolechen/nova-activitylog)
-![Packagist Version](https://img.shields.io/packagist/v/bolechen/nova-activitylog)
+[![Packagist Downloads](https://img.shields.io/packagist/dt/bolechen/nova-activitylog)](https://packagist.org/packages/bolechen/nova-activitylog)
+[![Packagist Version](https://img.shields.io/packagist/v/bolechen/nova-activitylog)](https://packagist.org/packages/bolechen/nova-activitylog)
 ![GitHub](https://img.shields.io/github/license/bolechen/nova-activitylog)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fbolechen%2Fnova-activitylog.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fbolechen%2Fnova-activitylog?ref=badge_shield)
 
 A tool to activity logger to monitor the users of your Laravel Nova.
 
@@ -21,8 +22,9 @@ composer require workup/nova-activitylog
 ```
 
 You can publish the migration with:
+
 ```bash
-php artisan vendor:publish --provider="Spatie\Activitylog\ActivitylogServiceProvider" --tag="migrations"
+php artisan vendor:publish --provider="Spatie\Activitylog\ActivitylogServiceProvider" --tag="activitylog-migrations"
 ```
 
 *Note*: The default migration assumes you are using integers for your model IDs. If you are using UUIDs, or some other format, adjust the format of the subject_id and causer_id fields in the published migration before continuing.
@@ -64,7 +66,7 @@ public function tools()
 }
 ```
 
-Because backend we use the `spatie/laravel-activitylog` package, you need to do is let your model use the `Spatie\Activitylog\Traits\LogsActivity` trait.
+Because the backend uses the `spatie/laravel-activitylog` package, you need to let your model use the `Spatie\Activitylog\Traits\LogsActivity` trait.
 
 Here's an example:
 
@@ -83,6 +85,10 @@ class NewsItem extends Model
 ```
 
 For more advanced usage can look at the doc: https://docs.spatie.be/laravel-activitylog/v3/advanced-usage/logging-model-events
+
+## Authorizing
+
+Typical usage of tool authorizing using `->canSee()` or `->canSeeWhen()` when registering the tool will NOT work. To authorize the tool, simply [make and register a Laravel policy](https://laravel.com/docs/10.x/authorization#creating-policies) for the `ActivityLog` model. If a user is not able to view them according to the policy, the tool will not show.
 
 
 ## Customize
@@ -115,3 +121,6 @@ And change the `resource` in `config/nova-activitylog.php` to your custom nova r
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE) for more information.
+
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fbolechen%2Fnova-activitylog.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fbolechen%2Fnova-activitylog?ref=badge_large)
